@@ -46,7 +46,7 @@ if __name__ == '__main__':
     mn - mn  # разность множеств
     mn & mn  # пересечение и тд
     mn.issubset(mn)  # проверка является ли одно множество подмножеством другого
-    mn.issupset(mn)  # надмножеством
+    mn.issuperset(mn)  # надмножеством
     mn.union(mn)
 
 
@@ -104,5 +104,7 @@ if __name__ == '__main__':
     for value in users.values():
         print(value)
 
- 
+    with open("hello.txt", "r") as somefile:  # такая конструкция не генерирует исключение и закрывает файл в конце
+        somefile.read()
+
     input()
