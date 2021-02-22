@@ -2,31 +2,31 @@ import turtle
 import time
 
 
-def func(some_name: int) -> None:  # указание типа не влияет на результат выполнения
+def func(some_name: int) -> None:  # Указание типа не влияет на результат выполнения
     """
-    это документ строка функции
+    Это документ строка функции
     :param some_name: руеквроавпяр
     :return: пкврпсмрвярв
     """
-    a: float = "Здесь везде аннотации"  # аннотации не влияют на результат выполнения
+    a: float = "Здесь везде аннотации"  # Аннотации не влияют на результат выполнения
     print(some_name)
 
 
 if __name__ == '__main__':
 
-    print("индекс ", ord("А"))  # номер символа в unicode
-    a: bool = "де" in "индекс"  # проверка вхождения подстроки в строку
-    info = "Name: {name}\t Age: {age}".format(name="Bob", age=23)  # форматированная строка
-    print("{:.4f}".format(23.8590534))  # это плейсхолдер
+    print("индекс ", ord("А"))  # Номер символа в unicode
+    a: bool = "де" in "индекс"  # Проверка вхождения подстроки в строку
+    info = "Name: {name}\t Age: {age}".format(name="Bob", age=23)  # Форматированная строка
+    print("{:.4f}".format(23.8590534))  # Это плейсхолдер
     print("%0.2f  - %.1e" % (23.8589578, 23.8589578))  # 23.86  - 2.3e+06 это тоже плейсхолдер
 
     import random
     numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-    random.shuffle(numbers)  # перемешивание списка
-    random_number = random.choice(numbers)  # извлечение случайного элемена
+    random.shuffle(numbers)  # Перемешивание списка
+    random_number = random.choice(numbers)  # Извлечение случайного элемена
 
     import math
-    math.log(8, 2)  # логарифм 8 по основанию 2
+    math.log(8, 2)  # Логарифм 8 по основанию 2
 
 
     for x in 3, 4, 6, 7:
@@ -36,68 +36,68 @@ if __name__ == '__main__':
 
     t1 = time.time()
     print(2 ** 1111135)
-    t2 = time.time()  # время исполнения
+    t2 = time.time()  # Время исполнения
 
     print(t2 - t1)
 
     a, b = 44, 52
 
-    a, b = b, a  # жонглирование при присваивании
+    a, b = b, a  # Жонглирование при присваивании
 
-    tup = 1, 2, "привет", 4, 5, 6, 7  # кортеж tuple неизменяемый
+    tup = 1, 2, "привет", 4, 5, 6, 7  # Кортеж tuple неизменяемый
 
-    a, *b, rest = tup  # распаковка кортежа, *b становится типом list
+    a, *b, rest = tup  # Распаковка кортежа, *b становится типом list
 
     print(a, b)
     print(type(b))
-    print(*b, sep=":", end="!\n")  # печать кортежа с разделителем
+    print(*b, sep=":", end="!\n")  # Печать кортежа с разделителем
     func("3fs")
 
-    for i, angle in enumerate(tup):  # так счетчик добавляется сам второй переменной
+    for i, angle in enumerate(tup):  # Так счетчик добавляется сам второй переменной
         print(i, ":", angle)
 
-    mn = {"donetsk", "minsk", "berlin"}  # неупоорядоченное изменяемое(хотя есть и frozen set) множество set
-    if "minsk" in mn:  # проверка вхождения элемента здесь выполняется быстрее, элементы уникальны
+    mn = {"donetsk", "minsk", "berlin"}  # Неупоорядоченное изменяемое(хотя есть и frozen set) множество set
+    if "minsk" in mn:  # Проверка вхождения элемента здесь выполняется быстрее, элементы уникальны
         mn.add(22)
-    mn - mn  # разность множеств
-    mn & mn  # пересечение и тд
-    mn.issubset(mn)  # проверка является ли одно множество подмножеством другого
-    mn.issuperset(mn)  # надмножеством
+    mn - mn  # Разность множеств
+    mn & mn  # Пересечение и тд
+    mn.issubset(mn)  # Проверка является ли одно множество подмножеством другого
+    mn.issuperset(mn)  # Надмножеством
     mn.union(mn)
 
-    md = {"donetsk": 33, "minsk": 22, "berlin": 11}  # а это словарь dict, только ключ уникален
-    md["rostov"] = 55  # добавление в словарь
+    md = {"donetsk": 33, "minsk": 22, "berlin": 11}  # А это словарь dict, только ключ уникален
+    md["rostov"] = 55  # Добавление в словарь
     print(md)
 
     '''rahgsjfyskjgdhnaer ths frhfd sh srthfg
     h sftdhf gxhj fgh ftgh ert
     dtrh cfgh xfg h
-    dtfhf xhj xyfjyftxjn'''  # это просто многострочная строка
+    dtfhf xhj xyfjyftxjn'''  # Это просто многострочная строка
 
     try:
         param = int(input())
     except Exception as e:
         print("err:", e)
-        raise Exception("myExeption")  # свое исключение                    !!!! ДАЛЬШЕ КОД НЕ СРАБАТЫВАЕТ
+        raise Exception("myExeption")  # Свое исключение                    !!!! ДАЛЬШЕ КОД НЕ СРАБАТЫВАЕТ
     finally:
         print("fin")
 
-    numbers = [7] * 5  # инициализация списка
-    numbers1 = list(range(10, 2, -2))  # в numpy есть еще arange это про диапазон
+    numbers = [7] * 5  # Инициализация списка
+    numbers1 = list(range(10, 2, -2))  # В numpy есть еще arange это про диапазон
 
     companies = ["Microsoft", "Google", "Oracle", "Apple"]
-    item = "Oracle"  # элемент для удаления
-    if item in companies:  # если применить remove без проверки наличия элемента может выбросить exeption
+    item = "Oracle"  # Элемент для удаления
+    if item in companies:  # Если применить remove без проверки наличия элемента может выбросить exeption
         companies.remove(item)
 
     users = ["Tom", "bob", "alice", "Sam", "Bill"]
-    users.sort(key=str.lower)  # сортируест список с учетом регистра с ключом lower
-    sorted_users = sorted(users, key=str.lower)  # sorted в отличии от sort не изменяет  исходный список
-    # users2 = copy.deepcopy(users1) # глубокое копирование списка(если список вложенный), если нет, то просто copy
-    users.pop(-1)  # синтаксис удаления элеента списка
+    users.sort(key=str.lower)  # Сортируест список с учетом регистра с ключом lower
+    sorted_users = sorted(users, key=str.lower)  # Sorted в отличии от sort не изменяет  исходный список
+    # users2 = copy.deepcopy(users1) # Глубокое копирование списка(если список вложенный), если нет, то просто copy
+    users.pop(-1)  # Синтаксис удаления элеента списка
 
-    user = ("Tom",)  # инициализация кортежа
-    users_tuple = tuple(users)  # конвертация списка в кортеж
+    user = ("Tom",)  # Инициализация кортежа
+    users_tuple = tuple(users)  # Конвертация списка в кортеж
 
     users = {
         "+11111111": "Tom",
@@ -105,9 +105,9 @@ if __name__ == '__main__':
         "+55555555": "Alice"
     }
 
-    del users["+55555555"]  # удаление элемента из словаря по ключу, нужна проверка if x in X
+    del users["+55555555"]  # Удаление элемента из словаря по ключу, нужна проверка if x in X
 
-    for key in users:  # варианты перебора словарей
+    for key in users:  # Варианты перебора словарей
         print(key, " - ", users[key])
 
     for key, value in users.items():
@@ -120,7 +120,7 @@ if __name__ == '__main__':
         print(value)
 
     with open("hello.txt",
-              "r", encoding="utf8") as somefile:  # такая конструкция не генерирует исключение и закрывает файл в конце
+              "r", encoding="utf8") as somefile:  # Такая конструкция не генерирует исключение и закрывает файл в конце
         somefile.read()
 
     with open("C:\\Users\\Admin\\Desktop\\fgsd", "w+") as f:
@@ -129,18 +129,18 @@ if __name__ == '__main__':
     import csv
 
     columns = ["name", "age"]
-    writer = csv.DictWriter(open("gfd", "w", newline=""), fieldnames=columns)  # запись в csv словаря dict
+    writer = csv.DictWriter(open("gfd", "w", newline=""), fieldnames=columns)  # Запись в csv словаря dict
     writer.writeheader()
     users = [
         {"name": "Tom", "age": 28},
         {"name": "Alice", "age": 23},
         {"name": "Bob", "age": 34}
     ]
-    writer.writerows(users)  # запись нескольких строк
-    # writer.writerow(user)  # запись одной строки
+    writer.writerows(users)  # Запись нескольких строк
+    # writer.writerow(user)  # Запись одной строки
 
-    import pickle  # чтение и запись бинарных обьектов в файлы
-    import shelve  # чтение и запись бинарных обьектов в файлы c этой библиотекой лучше
+    import pickle  # Чтение и запись бинарных обьектов в файлы
+    import shelve  # Чтение и запись бинарных обьектов в файлы c этой библиотекой лучше
 
     FILENAME = "user.dat"
     name = "Tom"

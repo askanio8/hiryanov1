@@ -1,17 +1,17 @@
 class Person:
-    some = 3  # глобальная переменная для всех обьектов
+    some = 3  # Глобальная переменная для всех обьектов
 
     def __init__(self, name, age):
-        self.__name = name  # инкапсуляция свойства
+        self.__name = name  # Инкапсуляция свойства
         self.__age = age
 
     @property
     def age(self):
-        return self.__age  # геттер
+        return self.__age  # Геттер
 
     @age.setter
     def age(self, age):
-        self.__age = age  # сеттер определяется после геттера
+        self.__age = age  # Сеттер определяется после геттера
 
     def __del__(self):
         print("deleted")
@@ -22,7 +22,7 @@ class Person:
 
 class Student(Person):
     def __init__(self, name, age):
-        super().__init__(name, age)  # вызов конструктора базового класса, если базовай класс один
+        super().__init__(name, age)  # Вызов конструктора базового класса, если базовай класс один
 
 
 a = Person("dsg", 4)
