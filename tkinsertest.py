@@ -57,4 +57,6 @@ mymenu.add_cascade(label="View")
 
 root.config(menu=mymenu)
 
+#assert 2+2 == 5, "!!!"  Утверждение для самопроверки программы
+
 root.mainloop()

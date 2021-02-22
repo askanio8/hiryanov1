@@ -1,7 +1,9 @@
 import turtle
 import time
+from contracts import contract
 
 
+@contract(some_name='int,>10')  # Это контракт, условие должно выполняться, иначе exception
 def func(some_name: int) -> None:  # Указание типа не влияет на результат выполнения
     """
     Это документ строка функции
@@ -21,13 +23,14 @@ if __name__ == '__main__':
     print("%0.2f  - %.1e" % (23.8589578, 23.8589578))  # 23.86  - 2.3e+06 это тоже плейсхолдер
 
     import random
+
     numbers = [1, 2, 3, 4, 5, 6, 7, 8]
     random.shuffle(numbers)  # Перемешивание списка
     random_number = random.choice(numbers)  # Извлечение случайного элемена
 
     import math
-    math.log(8, 2)  # Логарифм 8 по основанию 2
 
+    math.log(8, 2)  # Логарифм 8 по основанию 2
 
     for x in 3, 4, 6, 7:
         print(x ** 2)
