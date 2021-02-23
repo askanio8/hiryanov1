@@ -156,4 +156,6 @@ if __name__ == '__main__':
         age = pickle.load(file)
         print("Имя:", name, "\tВозраст:", age)
 
+    eval("2 + 3*len('hello')") # Выполняет строку как код, осторожно!
+
     input()
