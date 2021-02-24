@@ -1,4 +1,5 @@
 import threading
+from queue import Queue  # Это очередь для событий? потоков
 import time
 
 
