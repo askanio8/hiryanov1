@@ -2,6 +2,24 @@ import time
 from contracts import contract
 
 
+def fds():
+    print(xx)
+    pass
+
+
+def g():
+    # Если не указать global, то то при изменении её значения результат не будет сохранен
+    global xx
+    xx = 3
+    print(xx)
+
+
+xx = 2
+g()
+fds()
+print(xx)
+
+
 @contract(some_name='int,>10')  # Это контракт, условие должно выполняться, иначе exception
 def func(some_name: int) -> None:  # Указание типа не влияет на результат выполнения
     """
@@ -86,6 +104,6 @@ if __name__ == '__main__':
         age = pickle.load(file)
         print("Имя:", name, "\tВозраст:", age)
 
-    eval("2 + 3*len('hello')") # Выполняет строку как код, осторожно!
+    eval("2 + 3*len('hello')")  # Выполняет строку как код, осторожно!
 
     input()
