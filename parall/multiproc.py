@@ -42,3 +42,20 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# parent_conn, child_conn = Pipe() Двунаправленная труба, имеющая методы send, recv
+
+# lock = Lock() метод синхронизации доступа, как в threading. те же методы acquire и release
+# multiprocessing.Event
+# multiprocessing.Condition
+# multiprocessing.BoundedSemaphore
+# multiprocessing.Barrier
+# multiprocessing.RLock
+
+# num = Value('d', 0.0)  # Классы для взаимодействия процессов, создают общие объекты
+# arr = Array('i', range(10))
+# with Manager() as manager
+
+# multiprocessing.active_children()
+# multiprocessing.cpu_count()
+# multiprocessing.get_all_start_methods() Для того чтобы найти подходящий метод запуска в зависимости от ОС
