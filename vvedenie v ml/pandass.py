@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('_ea07570741a3ec966e284208f588e50e_titanic.csv', index_col='PassengerId')
+data = pd.read_csv('titanic.csv', index_col='PassengerId')
 
 # print(data[:10])  # 10 верхних строк
 # print(data.head())  # 5 верхних строк
