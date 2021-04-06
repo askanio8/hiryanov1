@@ -22,4 +22,37 @@
 # с большим весом... Должен быть критерий останова. Adaboost чувствителен к выбросам, модели после 20 стоит
 # проверить веса объектов, объекты с большими весами возможно выбросы. Adaboost можно использовать в качестве
 # детектора выбросов во время подготовки обучающей выборки к другим алгоритмам.
-# Xgboost - градиентный бустинг с регуляризацией по весам моделей и по количеству листьев деревьев
+# Xgboost - градиентный бустинг с регуляризацией по весам листьев деревьев и по их количеству
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import KFold
+from sklearn.metrics import r2_score  # одна из метрик качества, в cross_val_score есть параметр r2
+from sklearn.model_selection import cross_val_score
+
+
+# В этой задаче нужно предсказывать возраст ракушки по её измерениям
+data = pd.read_csv('abalone.csv')
+#  Преобразуем столбец в числовые значения
+data['Sex'] = data['Sex'].map(lambda x: 1 if x=='M' else (-1 if x=='F' else 0))
+
+Xdata = data.drop(columns='Rings')
+Ydata = data.filter(items=['Rings'])
+
+r2 = [] # Список оценок качества обучения леса
+crossvalidator = KFold(shuffle=True, random_state=1, n_splits=5)
+for n in range(1, 51):
+    clf = RandomForestRegressor(random_state=1, n_estimators=n)
+    randnumbers = crossvalidator.split(Xdata)
+
+    res = cross_val_score(clf, Xdata, Ydata.values.ravel(), cv=crossvalidator, scoring='r2')
+    # Вложенный цикл можно было не городить, а использовать cross_val_score с параметром scoring='r2', как это
+    # сделано строкой выше
+    #res = []
+    #for train, test in randnumbers:
+    #    clf.fit(Xdata.iloc[train], Ydata.iloc[train].values.ravel())
+    #    result = clf.predict(Xdata.iloc[test])
+    #    res.append(r2_score(Ydata.iloc[test].values.ravel(), result))
+    #r2.append(sum(res)/len(res))
+    print(n, ':', sum(res)/len(res))
+
+# 28 деревьев нужно для качества выше 0.525
