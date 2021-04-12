@@ -28,16 +28,16 @@ print(accuracy, precision, recall, f1measure)
 data = pd.read_csv('scores.csv')
 
 # Площади под ROC-кривой для каждой модели
-logregROC = metrics.roc_auc_score(data.filter(items=['true']),data.filter(items=['score_logreg']))
-svmROC = metrics.roc_auc_score(data.filter(items=['true']),data.filter(items=['score_svm']))
-knnROC = metrics.roc_auc_score(data.filter(items=['true']),data.filter(items=['score_knn']))
-treeROC = metrics.roc_auc_score(data.filter(items=['true']),data.filter(items=['score_tree']))
+logregROC = metrics.roc_auc_score(data.filter(items=['true']), data.filter(items=['score_logreg']))
+svmROC = metrics.roc_auc_score(data.filter(items=['true']), data.filter(items=['score_svm']))
+knnROC = metrics.roc_auc_score(data.filter(items=['true']), data.filter(items=['score_knn']))
+treeROC = metrics.roc_auc_score(data.filter(items=['true']), data.filter(items=['score_tree']))
 print(logregROC, svmROC, knnROC, treeROC)
 # score_logreg
 
 #  Какой классификатор достигает наибольшей точности (Precision) при полноте (Recall) не менее 70%
-logregPRC = metrics.precision_recall_curve(data.filter(items=['true']),data.filter(items=['score_logreg']))
-svmPRC = metrics.precision_recall_curve(data.filter(items=['true']),data.filter(items=['score_svm']))
-knnPRC = metrics.precision_recall_curve(data.filter(items=['true']),data.filter(items=['score_knn']))
-treePRC = metrics.precision_recall_curve(data.filter(items=['true']),data.filter(items=['score_tree']))
+logregPRC = metrics.precision_recall_curve(data.filter(items=['true']), data.filter(items=['score_logreg']))
+svmPRC = metrics.precision_recall_curve(data.filter(items=['true']), data.filter(items=['score_svm']))
+knnPRC = metrics.precision_recall_curve(data.filter(items=['true']), data.filter(items=['score_knn']))
+treePRC = metrics.precision_recall_curve(data.filter(items=['true']), data.filter(items=['score_tree']))
 # treeROC - 0.65
